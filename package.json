@@ -1,12 +1,12 @@
 {
-  "name": "serveur-web",
-  "version": "1.0.0",
-  "description": "",
+  "name": "My experimental framework",
+  "version": "0",
+  "description": "!!! DO NOT USE IN PRODUCTION !!! Personal experiments in Node.js",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Oom Sveta <oomsveta@protonmail.com>",
   "license": "ISC",
   "type": "module"
 }

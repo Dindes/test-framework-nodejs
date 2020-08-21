@@ -55,10 +55,16 @@ class HttpServer {
         }
 
         for (const route of routes) {
-            // TODO: handle malformed routes
             const [controller, handler] = route.controller.split`.`;
-            import(`./Controller/${controller}.js`)
-                .then(controller => this.routes[route.path] = controller.default[handler]);
+            import(`./Controller/${controller}.js`).then(controller => {
+                if (controller.default[handler] instanceof Function)
+                    this.routes[route.path] = controller.default[handler]
+                else
+                    console.error(`Cannot find handler related to route '${route.name}'. Maybe you misnamed it?`);
+            }).catch(e => {
+                if (e.constructor.name === "TypeError")
+                    console.error(e.message + ". Maybe you forgot to export your controller?")
+            });
         }
     }
 

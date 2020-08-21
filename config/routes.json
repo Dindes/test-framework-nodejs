@@ -1,0 +1,12 @@
+[
+  {
+    "name": "home",
+    "path": "/",
+    "controller": "HomeController.home"
+  },
+  {
+    "name": "wow",
+    "path": "/wow",
+    "controller": "HomeController.wow"
+  }
+]
